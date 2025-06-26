@@ -1,0 +1,15 @@
+[project]
+name = "edid-converter"
+version = "0.1.0"
+description = "A tool intented to help you find a max luminance to set in your EDID (using a tool like CRU) in order to customize RTX HDR for your monitor"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "scikit-learn"
+]
+
+[project.optional-dependencies]
+dev = [
+    "matplotlib"
+]
