@@ -11,7 +11,8 @@ def power_func_offset(x, a, b, c):
     return a * np.power(x, b) + c
 
 # Polynomial model: y = a*x^4 + b*x^3 + c*x^2 + d*x + e
-poly_coeffs = np.polyfit(x_data, y_data, deg=5)
+poly_deg = 5
+poly_coeffs = np.polyfit(x_data, y_data, deg=poly_deg)
 poly_func = np.poly1d(poly_coeffs)
 
 # Power fit with offset
@@ -26,7 +27,7 @@ r2_poly = r2_score(y_data, y_fit_poly)
 x_fit = np.linspace(97, 255, 500)
 plt.figure(figsize=(10, 6))
 plt.scatter(x_data, y_data, color='red', label='Measured Data')
-plt.plot(x_fit, poly_func(x_fit), label=f'Polynomial Fit (deg=3), R²={r2_poly:.4f}', color='blue')
+plt.plot(x_fit, poly_func(x_fit), label=f'Polynomial Fit (deg={poly_deg}), R²={r2_poly:.4f}', color='blue')
 plt.plot(x_fit, power_func_offset(x_fit, *params_power_offset), 
          label=f'Power Fit with Offset, R²={r2_power_offset:.4f}', color='green', linestyle='dashed')
 
