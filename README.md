@@ -7,4 +7,3 @@
 
 # I want to do my own math or development, thank you
 - Run `uv venv` and `uv pip install -r pyproject.toml --all-extras`
-- 
